@@ -27,6 +27,15 @@ const Card: FC<CardProps> = ({
     openModal(typeModal, item);
   };
 
+  const formattedDate = new Date(item.stats.lastUpdated).toLocaleDateString(
+    'en-US',
+    {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }
+  );
+
   return (
     <div
       onClick={handleClick}
@@ -39,7 +48,7 @@ const Card: FC<CardProps> = ({
         <div>
           <h3 className="font-semibold text-gray-800 text-sm">{item.title}</h3>
           <p className="text-sm text-gray-600">{item.description}</p>
-          <p className="text-xs text-gray-400 mt-1">{item.date}</p>
+          <p className="text-xs text-gray-400 mt-1">{formattedDate}</p>
         </div>
       </div>
     </div>
