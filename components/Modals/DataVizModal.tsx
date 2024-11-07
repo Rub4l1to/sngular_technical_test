@@ -1,7 +1,11 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 
 const DataVizModal: FC = () => {
-  return <div>DataVizModal</div>;
+  return (
+    <div>
+      <h2>DataViz Modal </h2>
+    </div>
+  );
 };
 
 export default DataVizModal;

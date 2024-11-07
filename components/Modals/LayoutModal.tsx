@@ -1,7 +1,11 @@
 import { FC } from 'react';
 
 const LayoutModal: FC = () => {
-  return <div>LayoutModal</div>;
+  return (
+    <div>
+      <h2>Layout Modal</h2>
+    </div>
+  );
 };
 
 export default LayoutModal;

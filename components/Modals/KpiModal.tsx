@@ -1,7 +1,11 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 
 const KpiModal: FC = () => {
-  return <div>KpiModal</div>;
+  return (
+    <div>
+      <h2>KPI Modal</h2>
+    </div>
+  );
 };
 
 export default KpiModal;

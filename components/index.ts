@@ -14,3 +14,4 @@ export { default as DataVizModal } from './Modals/DataVizModal';
 export { default as LayoutModal } from './Modals/LayoutModal';
 export { default as StoryboardModal } from './Modals/StoryboardModal';
 export { default as RequestAccessModal } from './Modals/RequestAccessModal';
+export { default as BaseModal } from './Modals/BaseModal';

@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 
 //* Components
 import {
+  BaseModal,
   SearchBar,
   Tabs,
   RequestAccessModal,
@@ -61,6 +62,7 @@ const Library: NextPage = () => {
       )}
 
       <RequestAccessModal onSubmit={handleSubmit} />
+      <BaseModal />
     </div>
   );
 };
