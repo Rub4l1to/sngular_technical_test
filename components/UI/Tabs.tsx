@@ -1,12 +1,10 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 import { motion } from 'framer-motion';
+import useStore from '@/store';
 
-interface TabsProps {
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-}
-
-const Tabs: FC<TabsProps> = ({ activeTab, setActiveTab }) => {
+const Tabs: FC = () => {
+  const activeTab = useStore((state) => state.activeTab);
+  const setActiveTab = useStore((state) => state.setActiveTab);
   const tabs = ['Featured', 'KPI', 'Layouts', 'Storyboards'];
 
   return (
@@ -31,7 +29,6 @@ const Tabs: FC<TabsProps> = ({ activeTab, setActiveTab }) => {
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             />
           )}
-
           <span className="relative z-20">{tab}</span>
         </button>
       ))}
