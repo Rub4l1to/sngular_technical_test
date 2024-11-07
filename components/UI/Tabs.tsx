@@ -1,15 +1,20 @@
 import { FC } from 'react';
 import { motion } from 'framer-motion';
+
+//* Store
 import useStore from '@/store';
+
+//* Types
+import { ModalType } from '@/lib/modalRegistry';
 
 const Tabs: FC = () => {
   const activeTab = useStore((state) => state.activeTab);
   const setActiveTab = useStore((state) => state.setActiveTab);
-  const tabs = ['Featured', 'KPI', 'Layouts', 'Storyboards'];
+  const tabs: ModalType[] = ['Featured', 'KPI', 'Layouts', 'Storyboards'];
 
   return (
     <div className="relative flex bg-gray-100 rounded-lg overflow-hidden p-1.5">
-      {tabs.map((tab) => (
+      {tabs.map((tab: ModalType) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}

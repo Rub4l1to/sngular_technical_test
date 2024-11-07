@@ -3,10 +3,13 @@ import { FC } from 'react';
 //* Components
 import { CardList } from '@/components';
 
+//* Types
+import { Item } from '@/store/slices/librarySlice';
+
 interface SearchResultSectionProps {
   title: string;
   description: string;
-  items: Array<{ title: string; description: string; date: string }>;
+  items: Array<Item>;
   typeCard?: 'default' | 'primary';
   searchQuery: string;
 }
