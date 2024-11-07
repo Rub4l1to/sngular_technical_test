@@ -25,105 +25,110 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
   activeTab: 'Featured',
   featuredItems: [
     {
-      title: 'Item name',
+      title: 'Featured 1',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Item name',
+      title: 'Featured 2',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Item name',
+      title: 'Featured 3',
+      description: 'Short description of the item goes nicely here.',
+      date: '06/27/2024',
+    },
+    {
+      title: 'Featured 4',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
   ],
   trendingItems: [
     {
-      title: 'Item name',
+      title: 'Trending 1',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Item name',
+      title: 'Trending 2',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Item name',
+      title: 'Trending 3',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Item name',
+      title: 'Trending 4',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
   ],
   kpiItems: [
     {
-      title: 'KPI name',
+      title: 'KPI 1',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'KPI name',
+      title: 'KPI 2',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'KPI name',
+      title: 'KPI 3',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'KPI name',
+      title: 'KPI 4',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
   ],
   layoutItems: [
     {
-      title: 'Layout name',
+      title: 'Layout 1',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Layout name',
+      title: 'Layout 2',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Layout name',
+      title: 'Layout 3',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Layout name',
+      title: 'Layout 4',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
   ],
   storyboardItems: [
     {
-      title: 'Storyboard name',
+      title: 'Storyboard 1',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Storyboard name',
+      title: 'Storyboard 2',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Storyboard name',
+      title: 'Storyboard 3',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },
     {
-      title: 'Storyboard name',
+      title: 'Storyboard 4',
       description: 'Short description of the item goes nicely here.',
       date: '06/27/2024',
     },

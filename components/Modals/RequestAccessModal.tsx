@@ -59,7 +59,7 @@ const RequestAccessModal: FC<RequestAccessModalProps> = ({ onSubmit }) => {
 
         <form onSubmit={handleSubmit(onSubmitHandler)}>
           <label htmlFor="reason" className="block font-medium text-gray-700">
-            Reason for Request
+            Reason
           </label>
           <textarea
             id="reason"

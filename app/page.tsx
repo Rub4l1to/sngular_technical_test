@@ -1,6 +1,7 @@
 'use client';
+
 import { NextPage } from 'next';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 //* Components
 import { SearchBar, Tabs, CardList, RequestAccessModal } from '@/components';
@@ -9,6 +10,7 @@ import { SearchBar, Tabs, CardList, RequestAccessModal } from '@/components';
 import useStore from '@/store';
 
 const Library: NextPage = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const activeTab = useStore((state) => state.activeTab);
   const getItemsForActiveTab = useStore((state) => state.getItemsForActiveTab);
 
@@ -24,9 +26,13 @@ const Library: NextPage = () => {
     console.log('Access requested with reason:', values.reason);
   };
 
+  const filteredItems = items.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="w-full max-w-3xl mx-auto flex flex-col gap-8">
-      <SearchBar />
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <Tabs />
 
       {activeTab === 'Featured' && (
@@ -35,7 +41,9 @@ const Library: NextPage = () => {
             <CardList
               title="Featured"
               description="Curated top picks from this week"
-              items={featuredItems}
+              items={featuredItems.filter((item) =>
+                item.title.toLowerCase().includes(searchQuery.toLowerCase())
+              )}
               typeCard="default"
             />
           </div>
@@ -44,7 +52,9 @@ const Library: NextPage = () => {
             <CardList
               title="Trending"
               description="Most popular by community"
-              items={trendingItems}
+              items={trendingItems.filter((item) =>
+                item.title.toLowerCase().includes(searchQuery.toLowerCase())
+              )}
               typeCard="primary"
             />
           </div>
@@ -53,7 +63,11 @@ const Library: NextPage = () => {
 
       {activeTab !== 'Featured' && (
         <div className="bg-gray-50 min-h-screen flex flex-col gap-2">
-          <CardList title={title} description={description} items={items} />
+          <CardList
+            title={title}
+            description={description}
+            items={filteredItems}
+          />
         </div>
       )}
 

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { createLibrarySlice, LibraryState } from './librarySlice';
-import { createUISlice, UIStore } from './uiSlice';
+import { createLibrarySlice, LibraryState } from './slices/librarySlice';
+import { createUISlice, UIStore } from './slices/uiSlice';
 
 type AppState = LibraryState & UIStore;
 

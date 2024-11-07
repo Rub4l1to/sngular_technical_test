@@ -3,8 +3,15 @@ import type { FC, ChangeEvent } from 'react';
 //* Icons
 import { IoSearch } from 'react-icons/io5';
 
-const SearchBar: FC = () => {
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {};
+interface SearchBarProps {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}
+
+const SearchBar: FC<SearchBarProps> = ({ searchQuery, setSearchQuery }) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -17,7 +24,7 @@ const SearchBar: FC = () => {
       <div className="relative mt-6">
         <input
           type="text"
-          value={''}
+          value={searchQuery}
           onChange={handleInputChange}
           placeholder="Type to search..."
           className="w-full p-3 pl-12 text-gray-700 border border-gray-300 rounded-xl shadow-sm focus:outline-none"
