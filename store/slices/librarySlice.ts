@@ -1,24 +1,29 @@
 import { StateCreator } from 'zustand';
 
-interface Item {
+//* Modal Types
+import { ModalType } from '@/lib/modalRegistry';
+
+export interface Item {
   title: string;
   description: string;
   date: string;
 }
 
 export interface LibraryState {
-  activeTab: string;
+  activeTab: ModalType;
   featuredItems: Item[];
   trendingItems: Item[];
   kpiItems: Item[];
   layoutItems: Item[];
   storyboardItems: Item[];
-  setActiveTab: (tab: string) => void;
+  favoriteItems: Item[];
+  setActiveTab: (tab: ModalType) => void;
   getItemsForActiveTab: () => {
     title: string;
     description: string;
     items: Item[];
   };
+  toggleFavorite: (item: Item) => void;
 }
 
 export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
@@ -133,7 +138,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
       date: '06/27/2024',
     },
   ],
-  setActiveTab: (tab) => set({ activeTab: tab }),
+  favoriteItems: [],
+  setActiveTab: (tab: ModalType) => set({ activeTab: tab }),
   getItemsForActiveTab: () => {
     const { activeTab, kpiItems, layoutItems, storyboardItems } = get();
     switch (activeTab) {
@@ -158,5 +164,17 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
       default:
         return { title: '', description: '', items: [] };
     }
+  },
+  toggleFavorite: (item) => {
+    set((state) => {
+      const isFavorite = state.favoriteItems.some(
+        (fav) => fav.title === item.title
+      );
+      return {
+        favoriteItems: isFavorite
+          ? state.favoriteItems.filter((fav) => fav.title !== item.title)
+          : [...state.favoriteItems, item],
+      };
+    });
   },
 });

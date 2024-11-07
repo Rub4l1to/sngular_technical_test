@@ -1,17 +1,16 @@
 import { FC } from 'react';
+
+//* Icons
 import { RxCross1 } from 'react-icons/rx';
 
 //* Store
 import useStore from '@/store';
 
-//* Constants
-import { ModalType } from '@/lib/modalRegistry';
-
-//* Registry
-import { modalComponents } from '@/lib/modalRegistry';
+//* Libs
+import { ModalType, modalComponents } from '@/lib/modalRegistry';
 
 const BaseModal: FC = () => {
-  const { isModalOpen, modalType, closeModal } = useStore();
+  const { isModalOpen, modalType, modalData, closeModal } = useStore();
 
   if (!isModalOpen || !modalType) return null;
 
@@ -26,7 +25,7 @@ const BaseModal: FC = () => {
         >
           <RxCross1 size={24} />
         </button>
-        <ModalContent />
+        <ModalContent item={modalData} />
       </div>
     </div>
   );

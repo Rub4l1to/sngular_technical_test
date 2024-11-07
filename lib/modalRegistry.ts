@@ -9,16 +9,24 @@ import {
 
 export const MODAL_TYPES = {
   KPI: 'KPI',
-  LAYOUT: 'Layout',
-  STORYBOARD: 'Storyboard',
+  LAYOUTS: 'Layouts',
+  STORYBOARDS: 'Storyboards',
   FEATURED: 'Featured',
 } as const;
 
 export type ModalType = (typeof MODAL_TYPES)[keyof typeof MODAL_TYPES];
 
-export const modalComponents: Record<ModalType, FC> = {
-  [MODAL_TYPES.KPI]: KpiModal,
-  [MODAL_TYPES.LAYOUT]: LayoutModal,
-  [MODAL_TYPES.STORYBOARD]: StoryboardModal,
-  [MODAL_TYPES.FEATURED]: DataVizModal,
+interface ModalComponentProps {
+  item: {
+    title: string;
+    description: string;
+    date: string;
+  };
+}
+
+export const modalComponents: Record<ModalType, FC<ModalComponentProps>> = {
+  KPI: KpiModal,
+  Layouts: LayoutModal,
+  Storyboards: StoryboardModal,
+  Featured: DataVizModal,
 };

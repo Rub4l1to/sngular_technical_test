@@ -1,36 +1,30 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 //* Icons
 import { TfiPieChart } from 'react-icons/tfi';
+
+//* Types
+import { Item } from '@/store/slices/librarySlice';
+import { ModalType } from '@/lib/modalRegistry';
 
 //* Store
 import useStore from '@/store';
 
 interface CardProps {
-  title: string;
-  description: string;
-  date?: string;
+  item: Item;
   typeCard?: 'default' | 'primary';
+  typeModal: ModalType;
 }
 
 const Card: FC<CardProps> = ({
-  title,
-  description,
-  date,
+  item,
   typeCard = 'default',
+  typeModal = 'Featured',
 }) => {
   const openModal = useStore((state) => state.openModal);
 
   const handleClick = () => {
-    if (title.includes('KPI')) {
-      openModal('KPI');
-    } else if (title.includes('Layout')) {
-      openModal('Layout');
-    } else if (title.includes('Storyboard')) {
-      openModal('Storyboard');
-    } else {
-      openModal('Featured');
-    }
+    openModal(typeModal, item);
   };
 
   return (
@@ -43,9 +37,9 @@ const Card: FC<CardProps> = ({
           <TfiPieChart size={44} className="text-gray-500" />
         </div>
         <div>
-          <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
-          <p className="text-sm text-gray-600">{description}</p>
-          {date && <p className="text-xs text-gray-400 mt-1">{date}</p>}
+          <h3 className="font-semibold text-gray-800 text-sm">{item.title}</h3>
+          <p className="text-sm text-gray-600">{item.description}</p>
+          <p className="text-xs text-gray-400 mt-1">{item.date}</p>
         </div>
       </div>
     </div>

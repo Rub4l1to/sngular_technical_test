@@ -1,5 +1,8 @@
 import { StateCreator } from 'zustand';
 
+//* Modal Types
+import { ModalType } from '@/lib/modalRegistry';
+
 export interface UIStore {
   //* Access Modal
   isAccessModalOpen: boolean;
@@ -8,10 +11,9 @@ export interface UIStore {
 
   //* Details Modal
   isModalOpen: boolean;
-  modalType: 'KPI' | 'DataViz' | 'Layout' | 'Storyboard' | 'Featured' | null;
-  openModal: (
-    type: 'KPI' | 'DataViz' | 'Layout' | 'Storyboard' | 'Featured'
-  ) => void;
+  modalType: ModalType;
+  modalData: any;
+  openModal: (type: ModalType, data?: any) => void;
   closeModal: () => void;
 }
 
@@ -23,7 +25,10 @@ export const createUISlice: StateCreator<UIStore> = (set) => ({
 
   //* Details Modal
   isModalOpen: false,
-  modalType: null,
-  openModal: (type) => set({ isModalOpen: true, modalType: type }),
-  closeModal: () => set({ isModalOpen: false, modalType: null }),
+  modalType: 'Featured',
+  modalData: null,
+  openModal: (type, data = null) =>
+    set({ isModalOpen: true, modalType: type, modalData: data }),
+  closeModal: () =>
+    set({ isModalOpen: false, modalType: 'Featured', modalData: null }),
 });
