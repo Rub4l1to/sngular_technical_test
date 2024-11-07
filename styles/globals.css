@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
+  /* Colors */
   --foreground: #171717;
-  --background: #ffffff;
-  --primary: #1a73e8;
+  --background: #f8fafc;
 
   /* Sizes */
   --font-xs: 0.75rem;
@@ -16,14 +16,6 @@
   --font-2xl: 1.875rem;
   --font-3xl: 2.25rem;
   --font-4xl: 3rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #0a0a0a;
-    --background: #f5f5f5;
-    --primary: #bb86fc;
-  }
 }
 
 body {

@@ -1,26 +1,38 @@
-import React from 'react';
+import type { FC } from 'react';
+import { motion } from 'framer-motion';
 
 interface TabsProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
 }
 
-const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab }) => {
+const Tabs: FC<TabsProps> = ({ activeTab, setActiveTab }) => {
   const tabs = ['Featured', 'KPI', 'Layouts', 'Storyboards'];
 
   return (
-    <div className="flex space-x-4 px-10 py-2">
+    <div className="relative flex bg-gray-100 rounded-lg overflow-hidden p-1.5">
       {tabs.map((tab) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`py-2 px-4 rounded-lg font-semibold ${
+          className={`relative z-10 w-1/4 py-1.5 font-semibold text-center ${
             activeTab === tab
-              ? 'bg-gray-100 text-gray-900'
-              : 'text-gray-700 hover:bg-gray-100'
+              ? 'text-gray-900'
+              : 'text-gray-500 hover:text-gray-700'
           }`}
         >
-          {tab}
+          {activeTab === tab && (
+            <motion.div
+              layoutId="activeTabBackground"
+              className="absolute inset-0 bg-white rounded-md "
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            />
+          )}
+
+          <span className="relative z-20">{tab}</span>
         </button>
       ))}
     </div>
