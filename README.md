@@ -1,6 +1,8 @@
-# Project Title
+# Sngular Library
 
 The objective of this project is to implement a library structure to query, explore, and access different types of assets, such as KPIs, dashboards, and other visual elements.
+
+<img width="1411" alt="screenshot" src="https://github.com/user-attachments/assets/95ecc82c-7a23-4fb6-9a63-8c2325341807">
 
 ## Project requirements
 
