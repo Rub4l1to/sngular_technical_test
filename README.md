@@ -69,4 +69,14 @@ The priority was to implement the described functionalities in the shortest time
 
 - The functionality of the "Request" button in the top-right corner of the library will be implemented as a basic informational modal rather than a complex form, given the limited time.
 
+## Time Allocation
+
+- Project setup and structure (**15 minutes**): I start by initializing the Next.js project with TypeScript, then I set up the basic folder and file structure to organize components, pages, and utilities.
+
+- Main page (**45 minutes**): I build out the main library interface, adding a search bar along with the Featured and Trending sections. I also place a request button in the interface.
+
+- Modals (**60 minutes**): I create individual modal components for each asset type (KPI, Data Visualization, etc.) and connect them to the main library page for easy access.
+
+- Refinement and documentation (**30 minutes**): Finally, I add some basic styling to enhance the interface and go through the code to document key decisions, adding this information to the README as well.
+
 For any questions or feedback on this project, feel free to contact me.
