@@ -6,6 +6,7 @@ export { default as SearchBar } from './UI/SearchBar';
 export { default as Tabs } from './UI/Tabs';
 export { default as Card } from './UI/Card';
 export { default as CardList } from './UI/CardList';
+export { default as SearchResultSection } from './UI/SearchResultSection';
 
 //* Modals
 export { default as KpiModal } from './Modals/KpiModal';
