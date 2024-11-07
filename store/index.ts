@@ -1,14 +1,12 @@
-import { create, StoreApi } from 'zustand';
+import { create } from 'zustand';
 import { createLibrarySlice, LibraryState } from './librarySlice';
+import { createUISlice, UIStore } from './uiSlice';
 
-type AppState = LibraryState;
+type AppState = LibraryState & UIStore;
 
 const useStore = create<AppState>((set, get, api) => ({
-  ...createLibrarySlice(
-    set as StoreApi<LibraryState>['setState'],
-    get as StoreApi<LibraryState>['getState'],
-    api as StoreApi<LibraryState>
-  ),
+  ...createLibrarySlice(set, get, api),
+  ...createUISlice(set, get, api),
 }));
 
 export default useStore;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+<ToastContainer position="top-right" autoClose={3000} />;
 
 //* Fonts
 import { roboto } from '@/lib/fonts';
@@ -11,6 +12,10 @@ import 'styles/animations.css';
 
 //* Components
 import { Header } from '@/components';
+
+//* Notifications
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const viewport = 'width=device-width, initial-scale=1.0';
 
@@ -29,6 +34,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
       <body className={`${roboto.className} antialiased`}>
         <Header />
         <main className="pt-4">{children}</main>
+        <ToastContainer position="top-right" autoClose={3000} />
       </body>
     </html>
   );

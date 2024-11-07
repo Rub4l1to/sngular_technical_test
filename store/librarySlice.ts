@@ -6,7 +6,7 @@ interface Item {
   date: string;
 }
 
-interface LibraryState {
+export interface LibraryState {
   activeTab: string;
   featuredItems: Item[];
   trendingItems: Item[];

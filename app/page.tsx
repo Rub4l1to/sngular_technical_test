@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { useMemo } from 'react';
 
 //* Components
-import { SearchBar, Tabs, CardList } from '@/components';
+import { SearchBar, Tabs, CardList, RequestAccessModal } from '@/components';
 
 //* Store
 import useStore from '@/store';
@@ -19,6 +19,10 @@ const Library: NextPage = () => {
     () => getItemsForActiveTab(),
     [activeTab]
   );
+
+  const handleSubmit = (values: { reason: string }) => {
+    console.log('Access requested with reason:', values.reason);
+  };
 
   return (
     <div className="w-full max-w-3xl mx-auto flex flex-col gap-8">
@@ -52,6 +56,8 @@ const Library: NextPage = () => {
           <CardList title={title} description={description} items={items} />
         </div>
       )}
+
+      <RequestAccessModal onSubmit={handleSubmit} />
     </div>
   );
 };
