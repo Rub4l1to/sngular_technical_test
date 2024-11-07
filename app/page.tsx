@@ -68,6 +68,7 @@ const Library: NextPage = () => {
           title="Trending"
           description="Most popular by community"
           items={trendingItems}
+          typeCard="primary"
         />
       </div>
     </div>

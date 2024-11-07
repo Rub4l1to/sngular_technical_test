@@ -11,9 +11,15 @@ interface CardListProps {
     description: string;
     date: string;
   }[];
+  typeCard?: 'default' | 'primary';
 }
 
-const CardList: FC<CardListProps> = ({ title, description, items }) => {
+const CardList: FC<CardListProps> = ({
+  title,
+  description,
+  items,
+  typeCard = 'default',
+}) => {
   return (
     <div>
       <h2 className="text-3xl font-medium  text-gray-800">{title}</h2>
@@ -25,6 +31,7 @@ const CardList: FC<CardListProps> = ({ title, description, items }) => {
             title={item.title}
             description={item.description}
             date={item.date}
+            typeCard={typeCard}
           />
         ))}
       </div>
