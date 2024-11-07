@@ -5,7 +5,8 @@ import { ModalType } from '@/lib/modalRegistry';
 
 export interface Item {
   title: string;
-  subtitle: ModalType;
+  subtitle: string;
+  type: ModalType;
   description: string;
   tags: string[];
   stats: {
@@ -39,52 +40,56 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
   featuredItems: [
     {
       title: 'Featured 1',
-      subtitle: 'Featured',
+      type: 'Featured',
+      subtitle: 'Descriptive name of the Layout',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
-        used: 0,
-        type: 'type',
-        pages: 0,
+        used: 2485,
+        type: 'Universal',
+        pages: 6,
         lastUpdated: new Date(),
       },
       businessQuestions: ['question1', 'question2'],
     },
     {
       title: 'Featured 2',
-      subtitle: 'Featured',
+      type: 'Featured',
+      subtitle: 'Descriptive name of the Layout',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
-        used: 0,
-        type: 'type',
-        pages: 0,
+        used: 1922,
+        type: 'Universal',
+        pages: 2,
         lastUpdated: new Date(),
       },
       businessQuestions: ['question1', 'question2'],
     },
     {
       title: 'Featured 3',
-      subtitle: 'Featured',
+      type: 'Featured',
+      subtitle: 'Descriptive name of the Layout',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
-        used: 0,
-        type: 'type',
-        pages: 0,
+        used: 922,
+        type: 'Universal',
+        pages: 5,
         lastUpdated: new Date(),
       },
       businessQuestions: ['question1', 'question2'],
     },
     {
       title: 'Featured 4',
-      subtitle: 'Featured',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Featured',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
-        used: 0,
-        type: 'type',
-        pages: 0,
+        used: 122,
+        type: 'Universal',
+        pages: 1,
         lastUpdated: new Date(),
       },
       businessQuestions: ['question1', 'question2'],
@@ -93,7 +98,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
   trendingItems: [
     {
       title: 'Trending 1',
-      subtitle: 'Trending',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Trending',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -106,7 +112,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Trending 2',
-      subtitle: 'Trending',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Trending',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -119,7 +126,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Trending 3',
-      subtitle: 'Trending',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Trending',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -132,7 +140,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Trending 4',
-      subtitle: 'Trending',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Trending',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -147,7 +156,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
   kpiItems: [
     {
       title: 'KPI 1',
-      subtitle: 'KPI',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'KPI',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -160,7 +170,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'KPI 2',
-      subtitle: 'KPI',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'KPI',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -173,7 +184,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'KPI 3',
-      subtitle: 'KPI',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'KPI',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -186,7 +198,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'KPI 4',
-      subtitle: 'KPI',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'KPI',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -201,7 +214,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
   layoutItems: [
     {
       title: 'Layout 1',
-      subtitle: 'Layouts',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Layouts',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -214,7 +228,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Layout 2',
-      subtitle: 'Layouts',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Layouts',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -227,7 +242,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Layout 3',
-      subtitle: 'Layouts',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Layouts',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -240,7 +256,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Layout 4',
-      subtitle: 'Layouts',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Layouts',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -255,7 +272,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
   storyboardItems: [
     {
       title: 'Storyboard 1',
-      subtitle: 'Storyboards',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Storyboards',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -268,7 +286,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Storyboard 2',
-      subtitle: 'Storyboards',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Storyboards',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -281,7 +300,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Storyboard 3',
-      subtitle: 'Storyboards',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Storyboards',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {
@@ -294,7 +314,8 @@ export const createLibrarySlice: StateCreator<LibraryState> = (set, get) => ({
     },
     {
       title: 'Storyboard 4',
-      subtitle: 'Storyboards',
+      subtitle: 'Descriptive name of the Layout',
+      type: 'Storyboards',
       description: 'Short description of the item goes nicely here.',
       tags: ['tag1', 'tag2'],
       stats: {

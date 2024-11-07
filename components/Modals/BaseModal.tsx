@@ -18,12 +18,12 @@ const BaseModal: FC = () => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-lg shadow-lg relative">
+      <div className="bg-white rounded-lg py-2 w-full max-w-2xl shadow-lg relative">
         <button
           onClick={closeModal}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          className="absolute top-6 right-6 text-black hover:text-gray-500"
         >
-          <RxCross1 size={24} />
+          <RxCross1 size={16} />
         </button>
         <ModalContent item={modalData} />
       </div>
